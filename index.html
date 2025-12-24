@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Love Letter</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    height:100vh;
+    background:radial-gradient(circle at top,#ffb6c1,#fadadd);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:'Great Vibes',cursive;
+}
+
+/* ===== ENVELOPE ===== */
+.wrapper{
+    position:relative;
+    width:340px;
+    height:240px;
+}
+
+.envelope{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+.back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#fff0f3;
+    border-radius:10px;
+    z-index:1;
+}
+
+.front{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#f4a6b8;
+    border-radius:10px;
+    z-index:3;
+}
+
+.flap{
+    position:absolute;
+    top:0;
+    width:100%;
+    height:55%;
+    background:#f08aa6;
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top;
+    transition:transform 1.4s cubic-bezier(.4,0,.2,1);
+    z-index:4;
+}
+
+/* ===== LETTER ===== */
+.letter{
+    position:absolute;
+    width:300px;
+    height:190px;
+    background:#fff;
+    left:50%;
+    top:20px;
+    transform:translateX(-50%);
+    border-radius:12px;
+    padding:14px;
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+    opacity:0;
+    transition:
+        top 1.8s cubic-bezier(.4,0,.2,1),
+        opacity 1.2s ease,
+        width 1.4s ease,
+        height 1.4s ease,
+        transform 1.4s ease;
+    z-index:2;
+    overflow:hidden;
+}
+
+/* ===== OPEN STATE ===== */
+.wrapper.open .flap{
+    transform:rotateX(180deg);
+}
+
+.wrapper.open .letter{
+    top:-240px;
+    opacity:1;
+}
+
+/* ===== FULL VIEW ===== */
+.letter.expand{
+    width:88vw;
+    max-width:760px;
+    height:82vh;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    padding:28px;
+}
+
+/* ===== LETTER CONTENT ===== */
+.content{
+    height:100%;
+    overflow-y:auto;
+    padding-right:8px;
+    font-size:1.6rem;        /* FIXED SIZE */
+    line-height:1.55;        /* FIXED SPACING */
+    color:#333;
+}
+
+/* SCROLLBAR */
+.content::-webkit-scrollbar{
+    width:6px;
+}
+.content::-webkit-scrollbar-thumb{
+    background:#ff8fab;
+    border-radius:10px;
+}
+
+/* ===== GLOW ===== */
+.glow{
+    color:#e63946;
+    text-shadow:0 0 6px #ff4d6d,0 0 14px #ff758f;
+    animation:pulse 2s infinite alternate;
+}
+
+@keyframes pulse{
+    from{opacity:.85}
+    to{opacity:1}
+}
+
+.heart{
+    text-align:center;
+    font-size:2.6rem;
+    margin:16px 0;
+    animation:beat 1s infinite;
+}
+
+@keyframes beat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.3)}
+}
+
+/* ===== BUTTON ===== */
+.btn{
+    position:absolute;
+    bottom:-60px;
+    left:50%;
+    transform:translateX(-50%);
+    padding:10px 26px;
+    background:#e63946;
+    color:white;
+    border:none;
+    border-radius:30px;
+    font-size:1rem;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper" id="wrap">
+    <div class="envelope">
+        <div class="flap"></div>
+        <div class="back"></div>
+        <div class="front"></div>
+
+        <div class="letter" id="letter">
+            <div class="content">
+
+<span class="glow">Heyy, Harshika</span> 💗  
+I’m sryy, <span class="glow">babyy</span> 🥹  
+Whatever I did was just a mazak mlm 🫠  
+I never meant to make you feel unloved, cutu 🌷  
+
+I love uhh so much 💖✨ and I’m really, really sryyy 🫶  
+You matter to meh more than my ego nothing over uhh sweetie 🥹🫶  
+more than a laugh 🫠  
+more than anything silly I could ever do ⭐  
+
+I just wanna be with you 🫶  
+and I promise I’ll never break yo heart 💓  
+becoz yo heart is something very precious to meh 🥹✨  
+You are very precious to meh 🌷  
+
+Being with you makes me feel chosen by fate ⭐  
+Loving you makes me feel lucky 🍀💗  
+And staying with you feels like something I want  
+for every version of my future ♾️✨  
+
+I’m blessed because I love you 💖  
+And I love you because you are you 🫶  
+Always. ♡ 🥹  
+
+I feel blessed not because life is perfect ✨  
+but because you’re in it 💗  
+
+Your laugh 🫠, your care 🌷, the way you stay —  
+they all feel like little gifts  
+my heart gets every single day 💓⭐  
+
+So this is just a little apology… 🥹  
+and a lot of love 💖💗  
+
+<span class="glow">Harshika</span>, you mean the world to me 🌍✨  
+I’m afraid of losing you 🥹  
+because my heart wants you forever ♾️💓  
+
+Loving you adds something special to my life 💖  
+something I can’t explain in words 🫶✨  
+
+If I had one lifetime wish ⭐  
+it would be to love you in every lifetime ♾️💗  
+
+You came into my life quietly 🌷  
+but you became the loudest beat in my heart 💓🥹  
+
+I’ll never leave you 🫶  
+and you’ll never feel unloved by meh, baby 💗  
+
+My <span class="glow">LOML</span> 💖  
+ILYSM, <span class="glow">HARSHI</span> 😭🫶✨  
+
+<div class="heart">❤️</div>
+
+            </div>
+        </div>
+    </div>
+
+    <button class="btn" onclick="toggle()">OPEN / CLOSE</button>
+</div>
+
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1b0f76b1d5.mp3">
+</audio>
+
+<script>
+let open=false;
+function toggle(){
+    const w=document.getElementById('wrap');
+    const l=document.getElementById('letter');
+
+    if(!open){
+        w.classList.add('open');
+        setTimeout(()=>l.classList.add('expand'),1800);
+        open=true;
+    }else{
+        l.classList.remove('expand');
+        setTimeout(()=>w.classList.remove('open'),800);
+        open=false;
+    }
+}
+</script>
+
+</body>
+</html>
